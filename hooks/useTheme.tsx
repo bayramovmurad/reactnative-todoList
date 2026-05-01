@@ -1,4 +1,10 @@
-import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
+import {
+createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export interface ColorScheme {
@@ -86,10 +92,10 @@ const darkColors: ColorScheme = {
 };
 
 interface ThemeContextType {
-    isDarkMode: boolean;
-    toggleDarkMode: () => void;
-    colors: ColorScheme;
-};
+  isDarkMode: boolean;
+  toggleDarkMode: () => void;
+  colors: ColorScheme;
+}
 
 const ThemeContext = createContext<undefined | ThemeContextType>(undefined);
 
@@ -127,4 +133,4 @@ const useTheme = () => {
   return context;
 };
 
-export default useTheme
+export default useTheme;
