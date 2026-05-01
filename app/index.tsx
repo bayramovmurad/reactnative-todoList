@@ -1,6 +1,8 @@
-import { Text, View, StyleSheet } from "react-native";
+import useTheme from "@/hooks/useTheme";
+import { Text, View, StyleSheet, Touchable, TouchableOpacity } from "react-native";
 
 export default function Index() {
+  const {toggleDarkMode} = useTheme();
   return (
     <View style={styles.container}>
       <Text style={styles.title}>
@@ -10,6 +12,7 @@ export default function Index() {
       <Text>
         salam
       </Text>
+      <TouchableOpacity onPress={toggleDarkMode}>toggle the mode</TouchableOpacity>
 
     </View>
   );
